@@ -22,9 +22,12 @@ for i, line in enumerate(instructions[10:]):
     from_number = int(line[-6]) - 1
     to_number = int(line[-1]) - 1
 
+    CrateMover_9001 = []
     for move in range(quantity):
         crane_slot = stacks[from_number].pop()
-        stacks[to_number].append(crane_slot)
+        CrateMover_9001.append(crane_slot)
+    
+    stacks[to_number] += list(reversed(CrateMover_9001))
 
 for s in stacks:
     message += s.pop()
